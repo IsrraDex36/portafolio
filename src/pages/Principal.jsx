@@ -127,7 +127,6 @@ export default function Principal() {
         {/* ============================================ */}
         <section id="education">
           <div className="w-full mt-0 flex justify-center px-4">
-          <div className="w-full mt-0 flex justify-center px-4">
             <div className="w-full max-w-5xl flex flex-col items-center">
               
               {/* Encabezado de la sección */}
@@ -156,7 +155,7 @@ export default function Principal() {
         {/* ============================================ */}
         {/* SECCIÓN 6: SOBRE MÍ / PERFIL */}
         {/* ============================================ */}
-        <section id="about">
+        <section id="about" className="pb-20">
           <ProfileImage />
         </section>
         
