@@ -103,7 +103,7 @@ const certificates = [
     category: "Sistemas",
     status: "Completado",
     backgroundImage: ciscoIcon,
-    link: "/src/assets/img/cisco/Partner.pdf",
+    link: "/pdf/cisco/Partner.pdf",
   },
   {
     title: "IoT Fundamentals: Connecting Things",
@@ -112,7 +112,7 @@ const certificates = [
     category: "IoT",
     status: "Completado",
     backgroundImage: ciscoIcon,
-    link: "/src/assets/img/cisco/IoT.pdf",
+    link: "/pdf/cisco/IoT.pdf",
   },
   {
     title: "Introduction to Cybersecurity",
@@ -121,7 +121,7 @@ const certificates = [
     category: "Ciberseguridad",
     status: "Completado",
     backgroundImage: ciscoIcon,
-    link: "/src/assets/img/cisco/security.pdf",
+    link: "/pdf/cisco/security.pdf",
   },
   {
     title: "Fundamentos de Python 1",
@@ -130,7 +130,7 @@ const certificates = [
     category: "Backend",
     status: "Completado",
     backgroundImage: ciscoIcon,
-    link: "/src/assets/img/cisco/python.pdf",
+    link: "/pdf/cisco/python.pdf",
   },
 ]
 
