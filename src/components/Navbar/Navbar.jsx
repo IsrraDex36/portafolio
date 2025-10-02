@@ -5,21 +5,24 @@ import {
   Briefcase, 
   FolderOpen, 
   BookOpen, 
+  Award,
   Moon, 
   Sun 
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useLenisContext } from '@/context/LenisContext';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
   
   // Obtener funciones de Lenis del contexto
   const { scrollTo } = useLenisContext();
 
   // Secciones para monitorear (en el orden correcto según la página)
-  const sections = ['home', 'experience', 'projects', 'skills', 'education', 'about'];
+  const sections = ['home', 'experience', 'projects', 'certifications', 'skills', 'education', 'about'];
   
   // Detectar sección activa automáticamente
   const activeSection = useActiveSection(sections, {
@@ -37,7 +40,7 @@ const Navbar = () => {
 
   // Scroll-based navigation highlighting
   useEffect(() => {
-    const sections = ['home', 'skills', 'experience', 'projects', 'education', 'about'];
+    const sections = ['home', 'experience', 'projects', 'certifications', 'skills', 'education', 'about'];
     
     // Responsive observer options based on screen size
     const getObserverOptions = () => {
@@ -107,9 +110,10 @@ const Navbar = () => {
         // Map section IDs to nav item IDs
         const navItemMap = {
           'home': 'home',
-          'skills': 'skills',
           'experience': 'experience',
           'projects': 'projects',
+          'certifications': 'certifications',
+          'skills': 'skills',
           'education': 'education',
           'about': 'profile'
         };
@@ -178,6 +182,12 @@ const Navbar = () => {
       icon: FolderOpen,
       tooltip: 'Proyectos',
       section: 'projects'
+    },
+    {
+      id: 'certifications',
+      icon: Award,
+      tooltip: 'Certificaciones',
+      section: 'certifications'
     },
     {
       id: 'skills',

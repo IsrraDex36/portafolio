@@ -10,7 +10,7 @@ export default function AboutMe() {
   const [typedText, setTypedText] = useState("");
   
   const commands = [
-    'echo "Desarrollador de Software"',
+    'echo "ING titulado en desarrollo de software"',
     'cat stack.txt',
     'printf "ship rápido, UI limpia, foco en valor\\n"'
   ];
@@ -114,7 +114,7 @@ export default function AboutMe() {
                       Jonathan Isrrael Caballero Morales
                     </h3>
                     <p className="text-[13px] sm:text-sm text-gray-300/90 font-medium">
-                      Desarrollador de Software
+                      Ing titulado en desarrollo de software
                     </p>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function AboutMe() {
 
                   {/* Outputs estáticos */}
                   <div className="ml-4 space-y-3">
-                    <p className="text-gray-100 font-medium">Desarrollador de Software</p>
+                    <p className="text-gray-100 font-medium">Ing titulado en desarrollo de software</p>
                     
                     <div className="rounded-xl border border-gray-700/60 bg-gray-800/40 px-4 py-3.5 backdrop-blur-sm">
                       <div className="flex flex-wrap gap-2.5">

@@ -1,7 +1,8 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import Principal from '@pages/Principal'
 import Proyectos from '@pages/Proyectos'
-import { LenisProvider } from '@/context/LenisContext'
+import Certificaciones from '@pages/Certificaciones'
+import { LenisProvider } from '@/context/LenisContext' 
 
 export default function App() {
   return (
@@ -14,11 +15,12 @@ export default function App() {
         smoothTouch: false, // Mejor rendimiento en móviles
       }}
     >
-      <div className="min-h-screen">
+      <div className="min-h-screen"> 
         <main>
           <Routes>
             <Route path="/" element={<Principal />} />
             <Route path="/proyectos" element={<Proyectos />} />
+            <Route path="/certificaciones" element={<Certificaciones />} />
           </Routes>
         </main>
       </div>

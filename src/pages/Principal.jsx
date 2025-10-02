@@ -5,6 +5,7 @@ import Proyects from '@/components/Proyects/Proyects';
 import ExperienceTimeline from '@/components/TimeLine/TimeLine';
 import ProfileImage from '@/components/ProfileImage/ProfileImage';
 import Navbar from '@/components/Navbar/Navbar';
+import CertificationsShowcase from '@/components/Certifications/Certifications';
 
 // Componentes de animación y efectos
 import BlurText from '@components/BlurText/BlurText';
@@ -56,11 +57,11 @@ export default function Principal() {
         {/* SECCIÓN 2: EXPERIENCIA PROFESIONAL */}
         {/* ============================================ */}
         <section id="experience">
-          <div className="w-full mt-0 flex justify-center px-4">
+          <div className="w-full mt-30 flex justify-center px-4">
             <div className="w-full max-w-5xl flex flex-col items-center">
               
               {/* Encabezado de la sección */}
-              <div className="mb-10 mt-10 text-center flex flex-col items-center">
+              <div className="mb-10 mt-20 text-center flex flex-col items-center">
                 <BlurText
                   text="Mi experiencia profesional"
                   delay={150}
@@ -80,9 +81,9 @@ export default function Principal() {
               {/* Contador de años de experiencia */}
               <div className="mb-8 mt-6 text-center">
                 <div 
-                  className="inline-flex items-center justify-center gap-1 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg opacity-0 translate-y-4 transition-all duration-300 ease-out delay-[200ms] animate-[slideUp_0.3s_ease-out_0.2s_forwards]" 
+                  className="inline-flex items-center justify-center gap-1 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg opacity-0 translate-y-4 transition-all duration-700 ease-out delay-[1200ms] animate-[slideUp_0.8s_ease-out_1.2s_forwards]" 
                   style={{
-                    animation: 'slideUp 0.3s ease-out 0.2s forwards',
+                    animation: 'slideUp 0.8s ease-out 1.2s forwards',
                     animationFillMode: 'forwards'
                   }}
                 >
@@ -91,8 +92,8 @@ export default function Principal() {
                     from={0}
                     to={2}
                     direction="up"
-                    duration={0.5}
-                    delay={0.3}
+                    duration={1}
+                    delay={1.1}
                     fontSize="text-4xl"
                     color="text-white"
                     fontWeight="font-bold"
@@ -114,16 +115,23 @@ export default function Principal() {
         <section id="projects" className="min-h-screen py-20">
           <Proyects />
         </section>
-        
 
         {/* ============================================ */}
-        {/* SECCIÓN 4: HABILIDADES */}
+        {/* SECCIÓN 4: CERTIFICACIONES */}
         {/* ============================================ */}
-        <section id="skills">
+        <section id="certifications" className="min-h-screen py-20">
+          <CertificationsShowcase />
+        </section>
+
+        {/* ============================================ */}
+        {/* SECCIÓN 5: HABILIDADES */}
+        {/* ============================================ */}
+        <section id="skills" className="min-h-screen py-20">
           <Skills />
         </section>
+
         {/* ============================================ */}
-        {/* SECCIÓN 5: FORMACIÓN ACADÉMICA */}
+        {/* SECCIÓN 6: FORMACIÓN ACADÉMICA */}
         {/* ============================================ */}
         <section id="education">
           <div className="w-full mt-0 flex justify-center px-4">
@@ -153,9 +161,9 @@ export default function Principal() {
           </div>
         </section>
         {/* ============================================ */}
-        {/* SECCIÓN 6: SOBRE MÍ / PERFIL */}
+        {/* SECCIÓN 7: SOBRE MÍ / PERFIL */}
         {/* ============================================ */}
-        <section id="about" className="pb-20">
+        <section id="about">
           <ProfileImage />
         </section>
         
