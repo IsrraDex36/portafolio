@@ -11,11 +11,16 @@ import CertificationsShowcase from '@/components/Certifications/Certifications';
 import BlurText from '@components/BlurText/BlurText';
 import CountUp from '@/components/CountUp/CountUp';
 
-// Datos
+// Hooks y datos
+import { useMetaTags } from '@/hooks/useDocumentTitle';
+import { pageMetadata } from '@/data/pageMetadata';
 import { itemExperience, formacion } from '@/data/experienceData';
 
 
 export default function Principal() {
+  // Configurar metadatos para la página principal
+  useMetaTags(pageMetadata.home);
+
   return (
     <>
       {/* ============================================ */}

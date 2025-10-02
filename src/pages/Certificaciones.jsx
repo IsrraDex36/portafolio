@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import BlurText from '@/components/BlurText/BlurText';
 import Squares from '@/components/Squares/Squares';
+import { useMetaTags } from '@/hooks/useDocumentTitle';
+import { pageMetadata } from '@/data/pageMetadata';
 
 // Importar iconos locales
 import googleIcon from '@/assets/img/iconos/google-wordmark.svg';
@@ -206,6 +208,9 @@ function CertificateCard({ title, issuer, date, category, status, backgroundImag
 
 export default function CertificatesSection() {
   const navigate = useNavigate();
+  
+  // Configurar metadatos para la página de certificaciones
+  useMetaTags(pageMetadata.certifications);
 
   const handleGoBack = () => {
     navigate(-1);
