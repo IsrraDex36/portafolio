@@ -96,18 +96,26 @@ export default function AboutMe() {
 
               {/* Contenido Terminal */}
               <div className="p-6 bg-gradient-to-b from-black/80 to-gray-900/80">
-                {/* Header */}
-                <div className="flex items-center gap-4 mb-6">
+                {/* Header Terminal */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
                   <img
                     src={profileImage}
                     alt="Foto de Jonathan Israel Caballero"
-                    className="h-16 w-16 rounded-xl object-cover shadow-lg"
+                    className="h-24 w-24 sm:h-16 sm:w-16 rounded-xl object-cover shadow-lg"
                     loading="lazy"
                   />
-                  <div>
-                    <p className="font-mono text-[11px] text-emerald-400 mb-1">~/about</p>
-                    <h3 className="text-white font-semibold text-lg truncate">Jonathan Israel Caballero Morales</h3>
-                    <p className="text-gray-300 text-sm">ING titulado en desarrollo de software</p>
+                  <div className="text-center sm:text-left min-w-0">
+                    <p className="font-mono text-[10px] sm:text-[11px] text-emerald-400 mb-1">
+                      ~/about
+                    </p>
+                    <h3 className="text-white font-semibold text-base sm:text-lg leading-tight mb-1">
+                      <span className="block sm:inline truncate sm:truncate-none">
+                        Jonathan Israel Caballero Morales
+                      </span>
+                    </h3>
+                    <p className="text-gray-300 text-xs sm:text-sm">
+                      ING titulado en desarrollo de software
+                    </p>
                   </div>
                 </div>
 
