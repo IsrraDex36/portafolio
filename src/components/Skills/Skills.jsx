@@ -63,7 +63,7 @@ const Skills = () => {
             {/* Skills Grid */}
             <div className="relative">
                 {/* Gradient Background Decoration */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 rounded-3xl blur-3xl" aria-hidden="true" />
+                <div className="absolute inset-0 bg-black rounded-3xl blur-3xl" aria-hidden="true" />
                 
                 {/* Skills Cards Grid */}
                 <div 

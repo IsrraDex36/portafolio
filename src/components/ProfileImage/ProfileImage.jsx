@@ -50,7 +50,7 @@ export default function AboutMe() {
 
   return (
     <section
-      className="w-full flex justify-center px-4 py-20 bg-gradient-to-tr from-gray-900 to-black"
+      className="w-full flex justify-center px-4 py-20 bg-black"
       aria-labelledby="aboutme-heading"
     >
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -81,10 +81,10 @@ export default function AboutMe() {
         {/* Terminal Card */}
         <FadeContent duration={800} delay={400} threshold={0.2} className="flex justify-center md:justify-end">
           <div className="relative w-[320px] sm:w-[400px] md:w-[480px]">
-            <div className="rounded-2xl overflow-hidden backdrop-blur-xl bg-gray-900/80 border border-gray-700 shadow-xl">
+            <div className="rounded-2xl overflow-hidden backdrop-blur-xl bg-gray-900/80 border border-gray-400 shadow-xl">
 
               {/* Barra Terminal */}
-              <div className="flex items-center justify-between px-5 py-3 bg-gradient-to-r from-gray-800/80 to-gray-900/80 border-b border-gray-700">
+              <div className="flex items-center justify-between px-5 py-3 bg-black border-b border-gray-400">
                 <div className="flex space-x-2">
                   <span className="h-3 w-3 rounded-full bg-red-500" />
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
@@ -95,7 +95,7 @@ export default function AboutMe() {
               </div>
 
               {/* Contenido Terminal */}
-              <div className="p-6 bg-gradient-to-b from-black/80 to-gray-900/80">
+              <div className="p-6 bg-black to-gray-900/80">
                 {/* Header Terminal */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
                   <img

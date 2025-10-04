@@ -42,7 +42,7 @@ export default function Principal() {
       {/* ============================================ */}
       {/* CONTENEDOR PRINCIPAL */}
       {/* ============================================ */}
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-black to-slate-950 overflow-hidden">
+      <div className="relative min-h-screen bg-black overflow-hidden">
         {/* Efecto de fondo con gradiente radial */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] blur-3xl opacity-30 pointer-events-none"></div>
         
