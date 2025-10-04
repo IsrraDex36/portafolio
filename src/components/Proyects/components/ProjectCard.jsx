@@ -8,39 +8,54 @@ export default function ProjectCard({
   image,
   technologies,
   githubUrl,
-  liveUrl
+  liveUrl,
+  status
 }) {
   return (
     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-      <div className="group overflow-hidden bg-black/30 backdrop-blur-md border border-gray-900 w-[380px] rounded-xl flex flex-col">
+      <div className="group relative overflow-hidden bg-black/40 backdrop-blur-lg border border-white/10 w-[380px] h-[550px] rounded-2xl flex flex-col">
         
-        {/* Imagen */}
+        {/* Efecto glassmorphism mejorado */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+        
+        {/* Imagen con overlay mejorado */}
         <div className="relative overflow-hidden w-full h-[280px]">
           <img
             src={image || "/placeholder.svg"}
             alt={`${title} project screenshot`}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Overlay con gradiente sutil */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
         </div>
 
-        {/* Contenido */}
-        <div className="p-4 flex-1">
-          <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
-            {title}
-          </h3>
-          <p className="text-gray-300 text-sm leading-relaxed mb-3 h-[140px] overflow-y-auto">
-            {description}
-          </p>
+        {/* Contenido con mejor espaciado */}
+        <div className="p-6 flex-1 flex flex-col">
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-white mb-3 tracking-tight leading-tight">
+              {title}
+            </h3>
+            
+            <div className="relative">
+              <p className="text-gray-300/90 text-sm leading-relaxed mb-4 h-[120px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20 hover:scrollbar-thumb-white/30">
+                {description}
+              </p>
+              
+              {/* Gradiente fade-out en el scroll */}
+              <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+            </div>
+          </div>
 
-          {/* Tecnologías */}
-          <div className="flex flex-wrap gap-2 mt-auto">
+          {/* Tecnologías con mejor diseño */}
+          <div className="flex flex-wrap gap-2 mt-4">
             {technologies.map((tech, index) => (
               <span
                 key={index}
-                className="text-xs px-2 py-1 rounded-lg border border-gray-800 bg-black/50 text-gray-300 flex items-center gap-1.5"
+                className="text-xs px-3 py-1.5 rounded-lg bg-black/50 text-gray-200 flex items-center gap-1.5 hover:bg-black/60 transition-all duration-300 backdrop-blur-sm"
               >
-                <span className="text-gray-400">
+                <span className="text-gray-300 opacity-80">
                   {techIcons[tech] || null}
                 </span>
                 {tech}
@@ -49,32 +64,41 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* Footer con botones */}
-        <div className="px-4 pb-4 flex gap-2 justify-end">
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 bg-black hover:bg-gray-900 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-gray-800"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              Ver
-            </a>
-          )}
+        {/* Footer mejorado - solo visible cuando no hay hover en imagen */}
+        <div className="px-6 pb-6 flex gap-3 justify-center">
+          {status ? (
+            <p className="text-gray-400 text-sm text-center italic">
+              {status}
+            </p>
+          ) : (
+            <>
+              {liveUrl && (
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-black/50 hover:bg-black/60 backdrop-blur-sm text-gray-100 hover:text-white transition-all duration-300 text-sm px-4 py-2.5 rounded-xl border border-white/30 hover:border-white/40"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Ver Proyecto
+                </a>
+              )}
 
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 bg-black hover:bg-gray-900 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-gray-800"
-            >
-              <Github className="w-3.5 h-3.5" />
-              Código
-            </a>
+              {githubUrl && (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-black/50 hover:bg-black/60 backdrop-blur-sm text-gray-100 hover:text-white transition-all duration-300 text-sm px-4 py-2.5 rounded-xl border border-white/30 hover:border-white/40"
+                >
+                  <Github className="w-4 h-4" />
+                  Ver Código
+                </a>
+              )}
+            </>
           )}
         </div>
+
       </div>
     </FadeContent>
   );

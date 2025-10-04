@@ -22,9 +22,9 @@ function clsx(...classes) {
 }
 
 // Common styles
-const cardBaseStyles = "group overflow-hidden backdrop-blur-md border rounded-xl flex flex-col h-full transition-all duration-300";
-const quoteBaseStyles = "bg-gradient-to-br from-stone-900/90 to-neutral-900/90 border-stone-700/50 hover:border-stone-600/70";
-const gifBaseStyles = "relative border border-neutral-700/50 bg-black/20 backdrop-blur-xl hover:border-neutral-600/70 hover:bg-black/30 shadow-2xl hover:shadow-3xl";
+const cardBaseStyles = "group overflow-hidden backdrop-blur-md border rounded-lg flex flex-col h-full transition-all duration-300";
+const quoteBaseStyles = "bg-gradient-to-br from-stone-900/90 to-neutral-900/90 border-stone-700/50 hover:border-stone-600/70 rounded-lg";
+const gifBaseStyles = "relative border border-neutral-700/50 bg-black/20 backdrop-blur-xl hover:border-neutral-600/70 hover:bg-black/30 shadow-2xl hover:shadow-3xl rounded-lg";
 
 // Memoized Project Card Component
 const ProjectBentoCard = memo(function ProjectBentoCard({ 
@@ -44,7 +44,7 @@ const ProjectBentoCard = memo(function ProjectBentoCard({
       )}
     >
       {/* Image */}
-      <div className="relative overflow-hidden w-full h-[200px]">
+      <div className="relative overflow-hidden w-full h-[200px] flex-shrink-0">
         {media && (
           <img
             loading="lazy"
@@ -59,11 +59,11 @@ const ProjectBentoCard = memo(function ProjectBentoCard({
 
       {/* Content */}
       <div className="flex-1 flex flex-col min-h-0">
-        <div className="p-3 flex flex-col">
+        <div className="p-3 flex flex-col flex-1">
           <h3 className="text-base font-bold text-white mb-2 tracking-tight">
             {title}
           </h3>
-          <p className="text-gray-300 text-xs leading-relaxed mb-2">
+          <p className="text-gray-300 text-xs leading-relaxed mb-2 flex-1">
             {description}
           </p>
 
@@ -72,7 +72,7 @@ const ProjectBentoCard = memo(function ProjectBentoCard({
             {technologies.map((tech, index) => (
               <span
                 key={index}
-                className="text-xs px-1.5 py-0.5 rounded-lg border border-gray-800 bg-black/50 text-gray-300 flex items-center gap-1"
+                className="text-xs px-1.5 py-0.5 rounded-lg bg-black/50 hover:bg-black/60 text-gray-300 flex items-center gap-1 transition-all duration-300 backdrop-blur-sm"
               >
                 <span className="text-gray-400 text-xs">
                   {techIcons[tech] || null}
@@ -83,18 +83,15 @@ const ProjectBentoCard = memo(function ProjectBentoCard({
           </div>
         </div>
 
-        {/* Spacer */}
-        <div className="flex-1"></div>
-
         {/* Footer with buttons */}
-        <div className="px-3 pb-3 flex gap-1.5 justify-end">
+        <div className="px-3 pb-3 flex gap-1.5 justify-end flex-shrink-0">
           {liveUrl && (
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Ver proyecto ${title} en vivo`}
-              className="inline-flex items-center justify-center gap-1 bg-black hover:bg-gray-900 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-gray-800"
+              className="inline-flex items-center justify-center gap-1 bg-black/50 hover:bg-black/60 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-white/30 hover:border-white/40"
             >
               <ExternalLink className="w-3 h-3" />
               Ver
@@ -107,7 +104,7 @@ const ProjectBentoCard = memo(function ProjectBentoCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Ver código fuente de ${title} en GitHub`}
-              className="inline-flex items-center justify-center gap-1 bg-black hover:bg-gray-900 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-gray-800"
+              className="inline-flex items-center justify-center gap-1 bg-black/50 hover:bg-black/60 text-gray-200 transition-colors text-sm px-3 py-1.5 rounded-lg border border-white/30 hover:border-white/40"
             >
               <Github className="w-3 h-3" />
               Código
@@ -126,7 +123,7 @@ const QuoteCard = memo(function QuoteCard({ content, author }) {
       {...motionConfig}
       className={clsx(cardBaseStyles, quoteBaseStyles, "cursor-pointer")}
     >
-      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center">
+      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center min-h-0">
         <div className="text-4xl text-stone-300 mb-3 font-serif">"</div>
         <p className="text-stone-100 text-sm font-medium leading-relaxed mb-3 italic">
           {content}
@@ -147,7 +144,7 @@ const StatCard = memo(function StatCard({ title, value, subtitle }) {
         "bg-gradient-to-br from-neutral-800/90 to-zinc-900/90 border-neutral-700/50 cursor-pointer hover:border-neutral-600/70"
       )}
     >
-      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center">
+      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center min-h-0">
         <h3 className="text-neutral-300 text-xs font-medium mb-2">{title}</h3>
         <div className="text-white text-2xl font-bold mb-1">{value}</div>
         <p className="text-neutral-400 text-xs">{subtitle}</p>
@@ -166,7 +163,7 @@ const SkillCard = memo(function SkillCard({ title, skills }) {
         "bg-gradient-to-br from-slate-800/90 to-gray-900/90 border-slate-700/50 cursor-pointer hover:border-slate-600/70"
       )}
     >
-      <div className="p-4 flex-1 flex flex-col justify-center">
+      <div className="p-4 flex-1 flex flex-col justify-center min-h-0">
         <h3 className="text-slate-200 text-sm font-bold mb-3 text-center">
           {title}
         </h3>
@@ -195,7 +192,7 @@ const StatusCard = memo(function StatusCard({ title, content }) {
         "bg-gradient-to-br from-zinc-800/90 to-stone-900/90 border-zinc-700/50 cursor-pointer hover:border-zinc-600/70"
       )}
     >
-      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center">
+      <div className="p-4 flex-1 flex flex-col justify-center items-center text-center min-h-0">
         <div className="w-2 h-2 bg-neutral-400 rounded-full mb-2" />
         <h3 className="text-zinc-300 text-xs font-medium mb-2">{title}</h3>
         <p className="text-white text-sm font-semibold">{content}</p>
@@ -233,9 +230,12 @@ const GifCard = memo(function GifCard({ media }) {
 const SplitGifCard = memo(function SplitGifCard({ medias = [] }) {
   const [top, bottom] = medias;
   return (
-    <div className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}>
+    <motion.div
+      {...motionConfig}
+      className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}
+    >
       {/* Top half */}
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative flex-1 overflow-hidden min-h-0">
         {top && (
           <img
             loading="lazy"
@@ -249,10 +249,10 @@ const SplitGifCard = memo(function SplitGifCard({ medias = [] }) {
       </div>
 
       {/* Subtle visual separator */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent" />
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent flex-shrink-0" />
 
       {/* Bottom half */}
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative flex-1 overflow-hidden min-h-0">
         {bottom && (
           <img
             loading="lazy"
@@ -269,7 +269,7 @@ const SplitGifCard = memo(function SplitGifCard({ medias = [] }) {
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-500/10 via-stone-500/5 to-transparent rounded-xl" />
       </div>
-    </div>
+    </motion.div>
   );
 });
 
@@ -280,9 +280,12 @@ const GifQuoteSplitCard = memo(function GifQuoteSplitCard({
   quoteAuthor 
 }) {
   return (
-    <div className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}>
+    <motion.div
+      {...motionConfig}
+      className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}
+    >
       {/* Top half - GIF */}
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative flex-1 overflow-hidden min-h-0">
         {gifMedia && (
           <img
             loading="lazy"
@@ -296,17 +299,17 @@ const GifQuoteSplitCard = memo(function GifQuoteSplitCard({
       </div>
 
       {/* Separator */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent" />
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent flex-shrink-0" />
 
       {/* Bottom half - Quote */}
-      <div className="relative flex-1 flex flex-col justify-center items-center text-center p-3 bg-gradient-to-br from-stone-900/90 to-neutral-900/90">
+      <div className="relative flex-1 flex flex-col justify-center items-center text-center p-3 bg-gradient-to-br from-stone-900/90 to-neutral-900/90 min-h-0">
         <div className="text-2xl text-stone-300 mb-2 font-serif">"</div>
         <p className="text-stone-100 text-xs font-medium leading-relaxed mb-2 italic">
           {quoteContent}
         </p>
         <p className="text-stone-400 text-xs">— {quoteAuthor}</p>
       </div>
-    </div>
+    </motion.div>
   );
 });
 
@@ -320,9 +323,9 @@ const MiniGridCard = memo(function MiniGridCard({ cards }) {
       <div className="p-3 h-full">
         <div className="grid grid-cols-2 gap-2 h-full">
           {cards.map((card, index) => (
-            <div key={index} className="h-full">
+            <div key={index} className="h-full min-h-0">
               {card.type === "quote" ? (
-                <div className="bg-gradient-to-br from-stone-900/90 to-neutral-900/90 backdrop-blur-md border border-stone-700/50 rounded-lg p-2 h-full flex flex-col justify-center items-center text-center">
+                <div className="bg-gradient-to-br from-stone-900/90 to-neutral-900/90 backdrop-blur-md border border-stone-700/50 rounded-lg p-2 h-full flex flex-col justify-center items-center text-center min-h-0">
                   <div className="text-lg text-stone-300 mb-1 font-serif">"</div>
                   <p className="text-stone-100 text-xs font-medium leading-relaxed mb-1 italic">
                     {card.content}
@@ -330,7 +333,7 @@ const MiniGridCard = memo(function MiniGridCard({ cards }) {
                   <p className="text-stone-400 text-xs">— {card.author}</p>
                 </div>
               ) : card.type === "gif" ? (
-                <div className="relative flex h-full flex-col overflow-hidden rounded-lg border border-neutral-700/50 bg-black/20 backdrop-blur-xl">
+                <div className="relative flex h-full flex-col overflow-hidden rounded-lg border border-neutral-700/50 bg-black/20 backdrop-blur-xl min-h-0">
                   <div className="absolute inset-0">
                     <img
                       loading="lazy"
@@ -358,9 +361,12 @@ const QuoteGifSplitCard = memo(function QuoteGifSplitCard({
   gifMedia 
 }) {
   return (
-    <div className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}>
+    <motion.div
+      {...motionConfig}
+      className={clsx(gifBaseStyles, "flex flex-col cursor-pointer")}
+    >
       {/* Top half - Quote */}
-      <div className="relative flex-1 flex flex-col justify-center items-center text-center p-3 bg-gradient-to-br from-stone-900/90 to-neutral-900/90">
+      <div className="relative flex-1 flex flex-col justify-center items-center text-center p-3 bg-gradient-to-br from-stone-900/90 to-neutral-900/90 min-h-0">
         <div className="text-2xl text-stone-300 mb-2 font-serif">"</div>
         <p className="text-stone-100 text-xs font-medium leading-relaxed mb-2 italic">
           {quoteContent}
@@ -369,10 +375,10 @@ const QuoteGifSplitCard = memo(function QuoteGifSplitCard({
       </div>
 
       {/* Separator */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent" />
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-neutral-600/40 to-transparent flex-shrink-0" />
 
       {/* Bottom half - GIF */}
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative flex-1 overflow-hidden min-h-0">
         {gifMedia && (
           <img
             loading="lazy"
@@ -384,7 +390,7 @@ const QuoteGifSplitCard = memo(function QuoteGifSplitCard({
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/20" />
       </div>
-    </div>
+    </motion.div>
   );
 });
 
@@ -448,8 +454,9 @@ export default function ProjectBentoGrid() {
           </div>
         </header>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 auto-rows-[450px]">
+        {/* Projects Grid - Ajustado para bento grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" 
+             style={{ gridAutoRows: 'minmax(300px, auto)' }}>
           {projectItems.map((item, index) => {
             const CardComponent = cardComponents[item.type] || cardComponents.default;
             

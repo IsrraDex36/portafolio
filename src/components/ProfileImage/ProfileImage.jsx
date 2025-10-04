@@ -81,10 +81,10 @@ export default function AboutMe() {
         {/* Terminal Card */}
         <FadeContent duration={800} delay={400} threshold={0.2} className="flex justify-center md:justify-end">
           <div className="relative w-[320px] sm:w-[400px] md:w-[480px]">
-            <div className="rounded-2xl overflow-hidden backdrop-blur-xl bg-gray-900/80 border border-gray-400 shadow-xl">
+            <div className="rounded-2xl overflow-hidden backdrop-blur-xl bg-gray-900/80 border border-white/20 shadow-xl">
 
               {/* Barra Terminal */}
-              <div className="flex items-center justify-between px-5 py-3 bg-black border-b border-gray-400">
+              <div className="flex items-center justify-between px-5 py-3 bg-black border border-white/20">
                 <div className="flex space-x-2">
                   <span className="h-3 w-3 rounded-full bg-red-500" />
                   <span className="h-3 w-3 rounded-full bg-amber-400" />

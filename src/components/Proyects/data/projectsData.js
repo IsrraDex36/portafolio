@@ -5,7 +5,7 @@ import Clever from '@assets/img/clever.png'
 export const projects = [
   {
     title: "Colaboracion en Medicinas Ultra",
-    description: "Durante mi estancia en Clever Cloud participé en el desarrollo de la web de Medicinas Ultra, colaborando en el diseño de la interfaz, la organización del catálogo de productos y la mejora del buscador para optimizar la accesibilidad y la experiencia del usuario.",
+    description: "Durante mi estancia en Clever Cloud participé en el desarrollo de la web de Medicinas Ultra, colaborando en el diseño de interfaz, organización del catálogo y mejora del buscador para optimizar la experiencia del usuario.",
     image: Clever,
     technologies: ["Vue.js", "JavaScript", "PHP", "Bootstrap"],
     liveUrl: "https://www.medicinasultra.com/inicio"
@@ -15,8 +15,7 @@ export const projects = [
     description: "Sistema de gestión de personal en ASP.NET y C# que permite administrar empleados, generar informes, gestionar vacaciones y evaluar desempeño. Usa MySQL en Linux y aumenta la eficiencia administrativa en un 30 %.",
     image: Fortisiip,
     technologies: ["Visual Studio", "C#", "SQL Server"],
-    githubUrl: "https://github.com/tuusuario/chat-app",
-    liveUrl: "https://tuchat.com"
+    status: "Proyecto interno de empresa - Código y proyecto no disponibles para visualización"
   },
   {
     title: "CasiSAT",

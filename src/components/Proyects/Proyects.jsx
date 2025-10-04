@@ -47,7 +47,7 @@ const Proyects = () => {
         <div className="flex justify-center">
            <button 
                 onClick={handleViewMoreProjects}
-                className="mt-12 px-6 py-3 bg-black/40 cursor-pointer text-white text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-md shadow-lg shadow-black/20 group"
+                className="mt-12 px-6 py-3 bg-black cursor-pointer text-white text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-md shadow-lg shadow-black/20 group"
             >
                 <span className="flex items-center gap-2">
                     <BlurText

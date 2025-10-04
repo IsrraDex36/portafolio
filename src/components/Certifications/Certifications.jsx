@@ -53,12 +53,9 @@ const CertificationsShowcase = () => {
 
   // Certificaciones simuladas para el efecto de desvanecimiento
   const loadingCertifications = [
-    { id: 4, title: "React Advanced Patterns", institution: "Meta", year: "2024", credentialId: "META-2024-REACT-004", credentialUrl: "#" },
-    { id: 5, title: "n8n Workflow Automation", institution: "n8n", year: "2024", credentialId: "N8N-2024-AUTO-005", credentialUrl: "#" },
-    { id: 6, title: "TypeScript Expert", institution: "Microsoft", year: "2023", credentialId: "MSFT-2023-TS-006", credentialUrl: "#" },
-    { id: 7, title: "Node.js Performance", institution: "OpenJS", year: "2024", credentialId: "OJS-2024-NODE-007", credentialUrl: "#" },
-    { id: 8, title: "GraphQL Fundamentals", institution: "Apollo", year: "2023", credentialId: "APL-2023-GQL-008", credentialUrl: "#" },
-    { id: 9, title: "Docker & Kubernetes", institution: "CNCF", year: "2024", credentialId: "CNCF-2024-K8S-009", credentialUrl: "#" }
+    { id: 4, title: "React Advanced Patterns", institution: "Meta", year: "2025", credentialId: "---", credentialUrl: "#" },
+    { id: 5, title: "n8n Workflow Automation", institution: "n8n", year: "2025", credentialId: "---", credentialUrl: "#" },
+    { id: 6, title: "TypeScript Expert", institution: "Microsoft", year: "2023", credentialId: "---", credentialUrl: "#" }
   ];
 
   return (
@@ -223,7 +220,7 @@ const CertificationsShowcase = () => {
             <div 
               className="absolute bottom-0 left-0 right-0 pointer-events-none" 
               style={{
-                background: 'linear-gradient(rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 100%)',
+                background: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 99%)',
                 height: '200px'
               }}
             />
