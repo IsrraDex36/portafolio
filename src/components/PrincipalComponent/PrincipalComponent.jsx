@@ -7,7 +7,7 @@ import { Mail, LinkedinIcon, GithubIcon, FileText } from "lucide-react";
 
 // Clases reutilizables para botones
 const buttonBaseClasses = "inline-flex items-center gap-1.5 px-3 py-2 border rounded-xl text-xs transition-all duration-300 backdrop-blur-md shadow-lg";
-const buttonSecondaryClasses = "bg-black/40 border-gray-700 text-white shadow-black/20 hover:bg-black/60 hover:border-gray-600 hover:shadow-xl hover:shadow-black/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50";
+const buttonSecondaryClasses = "bg-black/40 border-white/30 text-white shadow-black/20 hover:bg-black/60 hover:border-white/40 hover:shadow-xl hover:shadow-black/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50";
 const buttonPrimaryClasses = "bg-black/60 border-white text-white shadow-white/20 hover:bg-white hover:text-black hover:shadow-xl hover:shadow-white/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white cursor-pointer";
 
 const ProfileSection = () => {
@@ -43,7 +43,7 @@ const ProfileSection = () => {
               <img
                 src={profileImage}
                 alt="Foto profesional de Jonathan Israel Caballero Morales, desarrollador Frontend especializado en React y Node.js"
-                className="w-full h-auto rounded-lg relative z-10"
+                className="w-full h-auto rounded-full relative z-10"
                 loading="lazy"
               />
               <FloatingIcons />
