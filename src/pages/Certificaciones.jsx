@@ -16,6 +16,24 @@ import ciscoIcon from '@/assets/img/iconos/cisco_dark.svg';
 
 const certificates = [
   {
+    title: "JavaScript ES6+",
+    issuer: "Udemy",
+    date: "2025",
+    category: "Frontend / JavaScript",
+    status: "Completado",
+    backgroundImage: udemyIcon,
+    link: "https://www.udemy.com/certificate/UC-45dd55d6-e982-46ba-a432-490cd1b47e98/",
+  },
+  {
+    title: "TypeScript",
+    issuer: "Udemy",
+    date: "2025",
+    category: "Frontend / TypeScript",
+    status: "Completado",
+    backgroundImage: udemyIcon,
+    link: "https://www.udemy.com/certificate/UC-45dd55d6-e982-46ba-a432-490cd1b47e98/",
+  },
+  {
     title: "Curso de introducción al desarrollo web: HTML y CSS (1/2)",
     issuer: "Google",
     date: "2025",
