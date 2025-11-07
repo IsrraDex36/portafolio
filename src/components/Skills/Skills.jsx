@@ -67,7 +67,7 @@ const Skills = () => {
                 
                 {/* Skills Cards Grid */}
                 <div 
-                    className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center"
+                    className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 md:gap-8 justify-items-center"
                     role="grid"
                     aria-label="Habilidades técnicas organizadas por categorías"
                 >
@@ -77,7 +77,7 @@ const Skills = () => {
                         return (
                             <div 
                                 key={`skill-category-${index}`}
-                                className={`w-full max-w-sm ${isMiddleCard ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                                className={`w-full ${isMiddleCard ? 'md:col-span-2 lg:col-span-1' : ''}`}
                                 role="gridcell"
                             >
                                 <TerminalCard 

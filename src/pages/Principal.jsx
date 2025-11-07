@@ -10,6 +10,7 @@ import CertificationsShowcase from '@/components/Certifications/Certifications';
 // Componentes de animación y efectos
 import BlurText from '@components/BlurText/BlurText';
 import CountUp from '@/components/CountUp/CountUp';
+import '../estilos/PrincipalStyles.css'
 
 // Hooks y datos
 import { useMetaTags } from '@/hooks/useDocumentTitle';
@@ -22,45 +23,16 @@ export default function Principal() {
   useMetaTags(pageMetadata.home);
 
   return (
-    <>
-      {/* ============================================ */}
-      {/* ESTILOS GLOBALES */}
-      {/* ============================================ */}
-      <style jsx>{`
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(16px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-
-      {/* ============================================ */}
-      {/* CONTENEDOR PRINCIPAL */}
-      {/* ============================================ */}
+    <>   
       <div className="relative min-h-screen bg-black overflow-hidden">
         {/* Efecto de fondo con gradiente radial */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] blur-3xl opacity-30 pointer-events-none"></div>
-        
-        {/* ============================================ */}
-        {/* NAVEGACIÓN */}
-        {/* ============================================ */}
         <Navbar />
         
-        {/* ============================================ */}
-        {/* SECCIÓN 1: INICIO / HERO */}
-        {/* ============================================ */}
         <section id="home">
           <PrincipalComponent />
         </section>
-
-        {/* ============================================ */}
-        {/* SECCIÓN 2: EXPERIENCIA PROFESIONAL */}
-        {/* ============================================ */}
+ 
         <section id="experience">
           <div className="w-full mt-30 flex justify-center px-4">
             <div className="w-full max-w-5xl flex flex-col items-center">
@@ -113,36 +85,22 @@ export default function Principal() {
             </div>
           </div>
         </section>
-
-        {/* ============================================ */}
-        {/* SECCIÓN 3: PROYECTOS */}
-        {/* ============================================ */}
+ 
         <section id="projects" className="min-h-screen py-20">
           <Proyects />
         </section>
-
-        {/* ============================================ */}
-        {/* SECCIÓN 4: CERTIFICACIONES */}
-        {/* ============================================ */}
+ 
         <section id="certifications" className="min-h-screen py-20">
           <CertificationsShowcase />
         </section>
-
-        {/* ============================================ */}
-        {/* SECCIÓN 5: HABILIDADES */}
-        {/* ============================================ */}
+ 
         <section id="skills" className="min-h-screen py-20">
           <Skills />
         </section>
-
-        {/* ============================================ */}
-        {/* SECCIÓN 6: FORMACIÓN ACADÉMICA */}
-        {/* ============================================ */}
+ 
         <section id="education">
           <div className="w-full mt-0 flex justify-center px-4">
-            <div className="w-full max-w-5xl flex flex-col items-center">
-              
-              {/* Encabezado de la sección */}
+            <div className="w-full max-w-5xl flex flex-col items-center"> 
               <div className="mb-10 mt-20 text-center flex flex-col items-center">
                 <BlurText
                   text="Formación Académica"
@@ -164,10 +122,7 @@ export default function Principal() {
               <ExperienceTimeline items={formacion} />
             </div>
           </div>
-        </section>
-        {/* ============================================ */}
-        {/* SECCIÓN 7: SOBRE MÍ / PERFIL */}
-        {/* ============================================ */}
+        </section> 
         <section id="about">
           <ProfileImage />
         </section>

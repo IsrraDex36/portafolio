@@ -4,17 +4,17 @@ export const skillsData = [
         skills: [
             { name: "HTML5", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
             { name: "CSS3", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+            { name: "TypeScript", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
             { name: "JavaScript", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
             { name: "React", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Vue.js", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
             { name: "Bootstrap", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-            { name: "Tailwind", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+            { name: "Tailwind", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
         ]
     },
     {
         title: "Backend", 
-        skills: [
-            { name: "Python", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        skills: [ 
             { name: "PHP", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
             { name: "C++", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
             { name: "Node.js", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }
@@ -51,13 +51,5 @@ export const skillsData = [
             }
         ]
     },
-    {
-        title: "Móvil",
-        skills: [
-            { name: "Flutter", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-            { name: "Android", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" },
-            { name: "Kotlin", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
-            { name: "Dart", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" }
-        ]
-    }
+    
 ];
