@@ -1,162 +1,47 @@
-import { Terminal, Award, ExternalLink, Calendar, Building, ArrowLeft } from "lucide-react"
+import { Terminal, ExternalLink, Calendar, Building, ArrowLeft } from "lucide-react"
 import { useEffect } from 'react'
-import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import BlurText from '@/components/BlurText/BlurText';
 import Squares from '@/components/Squares/Squares';
 import { useMetaTags } from '@/hooks/useDocumentTitle';
 import { pageMetadata } from '@/data/pageMetadata';
-
-// Importar iconos locales
-import googleIcon from '@/assets/img/iconos/google-wordmark.svg';
-import udemyIcon from '@/assets/img/iconos/udemy_dark.svg';
-import freeCodeCampIcon from '@/assets/img/iconos/free-code-camp.svg';
-import courseraIcon from '@/assets/img/iconos/coursera.svg';
-import ciscoIcon from '@/assets/img/iconos/cisco_dark.svg';
-
-const certificates = [
-  {
-    title: "JavaScript ES6+",
-    issuer: "Udemy",
-    date: "2025",
-    category: "Frontend / JavaScript",
-    status: "Completado",
-    backgroundImage: udemyIcon,
-    link: "https://www.udemy.com/certificate/UC-45dd55d6-e982-46ba-a432-490cd1b47e98/",
-  },
-  {
-    title: "TypeScript",
-    issuer: "Udemy",
-    date: "2025",
-    category: "Frontend / TypeScript",
-    status: "Completado",
-    backgroundImage: udemyIcon,
-    link: "https://www.udemy.com/certificate/UC-45dd55d6-e982-46ba-a432-490cd1b47e98/",
-  },
-  {
-    title: "Curso de introducción al desarrollo web: HTML y CSS (1/2)",
-    issuer: "Google",
-    date: "2025",
-    category: "Desarrollo Web",
-    status: "Completado",
-    backgroundImage: googleIcon,
-    link: "https://skillshop.exceedlms.com/student/award/RRbYtQh3u4HocanAi1Z1NiDC",
-  },
-  {
-    title: "Curso de introducción al desarrollo web: HTML y CSS (2/2)",
-    issuer: "Google",
-    date: "2025",
-    category: "Desarrollo Web",
-    status: "Completado",
-    backgroundImage: googleIcon,
-    link: "https://skillshop.exceedlms.com/student/award/TY4DjahdjLyxWVi56AsSa8Uw",
-  },
-  {
-    title: "Data Visualization",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    category: "Frontend",
-    status: "Completado",
-    backgroundImage: freeCodeCampIcon,
-    link: "https://www.freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/data-visualization",
-  },
-  {
-    title: "Desarrolla tus habilidades de productividad con IA generativa con Microsoft y LinkedIn",
-    issuer: "LinkedIn Learning",
-    date: "2025",
-    category: "IA & Productividad",
-    status: "Completado",
-    backgroundImage: freeCodeCampIcon, // Usaremos freeCodeCamp como placeholder para LinkedIn
-    link: "https://www.linkedin.com/learning/certificates/1c26712bb9a406173d88838a3f65da37b6683ecb73dab871b25d7cd098c16e33",
-  },
-  {
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    category: "Algoritmos",
-    status: "Completado",
-    backgroundImage: freeCodeCampIcon,
-    link: "https://www.freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/javascript-algorithms-and-data-structures-v8",
-  },
-  {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    category: "Desarrollo Web",
-    status: "Completado",
-    backgroundImage: freeCodeCampIcon,
-    link: "https://www.freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/responsive-web-design",
-  },
-  {
-    title: "Git y GitHub desde cero a experto",
-    issuer: "Udemy",
-    date: "2025",
-    category: "DevOps",
-    status: "Completado",
-    backgroundImage: udemyIcon,
-    link: "https://www.udemy.com/certificate/UC-b235cc92-2533-40c6-bac6-af798ad1ae7c/",
-  },
-  {
-    title: "Universidad de Programación - Python, Java y JavaScript",
-    issuer: "Udemy",
-    date: "2025",
-    category: "Backend",
-    status: "Completado",
-    backgroundImage: udemyIcon,
-    link: "https://www.udemy.com/certificate/UC-0fe6c01d-5393-4e6c-9c1a-1e57ad3ed270/",
-  },
-  {
-    title: "Front-End Development Libraries",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    category: "Frontend",
-    status: "Completado",
-    backgroundImage: freeCodeCampIcon,
-    link: "https://freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/front-end-development-libraries",
-  },
-  {
-    title: "Partner: NDG Linux Unhatched",
-    issuer: "CISCO",
-    date: "2022",
-    category: "Sistemas",
-    status: "Completado",
-    backgroundImage: ciscoIcon,
-    link: "/pdf/cisco/Partner.pdf",
-  },
-  {
-    title: "IoT Fundamentals: Connecting Things",
-    issuer: "CISCO",
-    date: "2022",
-    category: "IoT",
-    status: "Completado",
-    backgroundImage: ciscoIcon,
-    link: "/pdf/cisco/IoT.pdf",
-  },
-  {
-    title: "Introduction to Cybersecurity",
-    issuer: "CISCO",
-    date: "2023",
-    category: "Ciberseguridad",
-    status: "Completado",
-    backgroundImage: ciscoIcon,
-    link: "/pdf/cisco/security.pdf",
-  },
-  {
-    title: "Fundamentos de Python 1",
-    issuer: "CISCO",
-    date: "2024",
-    category: "Backend",
-    status: "Completado",
-    backgroundImage: ciscoIcon,
-    link: "/pdf/cisco/python.pdf",
-  },
-]
+import { certificates } from '@/data/certificates';
 
 function CertificateCard({ title, issuer, date, category, status, backgroundImage, link }) {
     useEffect(() => {
       // Scroll to top when component mounts
       window.scrollTo(0, 0)
     }, [])
+
+    // Extraer ID de credencial de la URL si es posible
+    const extractCredentialId = (url) => {
+      if (url.includes('certificate/UC-')) {
+        const match = url.match(/UC-([a-f0-9-]+)/);
+        return match ? match[1].substring(0, 8) + '...' : null;
+      }
+      if (url.includes('certification/')) {
+        const parts = url.split('certification/');
+        if (parts[1]) {
+          const id = parts[1].split('/')[0];
+          return id.substring(0, 12) + '...';
+        }
+      }
+      if (url.includes('award/')) {
+        const parts = url.split('award/');
+        if (parts[1]) {
+          return parts[1].substring(0, 12) + '...';
+        }
+      }
+      if (url.includes('.pdf')) {
+        const parts = url.split('/');
+        const filename = parts[parts.length - 1];
+        return filename.replace('.pdf', '');
+      }
+      return null;
+    };
+
+    const credentialId = extractCredentialId(link);
+
   return (
     <div className="group relative bg-black border border-white/15 rounded-xl overflow-hidden hover:border-white/36 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-[32rem] flex flex-col">
       {/* Certificate Image with Background */}
@@ -206,6 +91,11 @@ function CertificateCard({ title, issuer, date, category, status, backgroundImag
               <Calendar className="w-4 h-4 text-white" />
               <span className="text-sm font-medium">{date}</span>
             </div>
+            {credentialId && (
+              <div className="text-xs text-gray-400 font-mono bg-black/30 px-2 py-1 rounded border border-white/5">
+                ID: {credentialId}
+              </div>
+            )}
           </div>
         </div>
 

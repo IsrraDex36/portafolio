@@ -3,13 +3,7 @@ import { Award, ExternalLink, Calendar, Building, ArrowRight } from 'lucide-reac
 import { useNavigate } from 'react-router-dom';
 import BlurText from '@/components/BlurText/BlurText';
 import CountUp from '@/components/CountUp/CountUp';
-
-// Importar iconos locales
-import googleIcon from '@/assets/img/iconos/google-wordmark.svg';
-import udemyIcon from '@/assets/img/iconos/udemy_dark.svg';
-import freeCodeCampIcon from '@/assets/img/iconos/free-code-camp.svg';
-import courseraIcon from '@/assets/img/iconos/coursera.svg';
-import ciscoIcon from '@/assets/img/iconos/cisco_dark.svg';
+import { certificates } from '@/data/certificates';
 
 const CertificationsShowcase = () => {
   const navigate = useNavigate();
@@ -18,38 +12,30 @@ const CertificationsShowcase = () => {
     navigate('/certificaciones');
   };
 
-  const certifications = [
-    {
-      id: 1,
-      title: "Responsive Web Design",
-      institution: "FreeCodeCamp",
-      year: "2025",
-      category: "Desarrollo Web",
-      status: "Completado",
-      backgroundImage: freeCodeCampIcon, 
-      credentialUrl: "https://freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/responsive-web-design"
-    },
-    {
-      id: 2,
-      title: "Universidad de Programación - Python, Java y JavaScript",
-      institution: "Udemy",
-      year: "2025",
-      category: "Backend",
-      status: "Completado",
-      backgroundImage: udemyIcon, 
-      credentialUrl: "https://www.udemy.com/certificate/UC-0fe6c01d-5393-4e6c-9c1a-1e57ad3ed270/"
-    },
-    {
-      id: 3,
-      title: "Front-End Development Libraries",
-      institution: "Udemy",
-      year: "2025",
-      category: "Frontend",
-      status: "Completado",
-      backgroundImage: freeCodeCampIcon, 
-      credentialUrl: "https://freecodecamp.org/certification/fcc49ca491e-af35-4075-880e-d9ca1d28eedc/front-end-development-libraries"
-    }
+  const featuredCertificationTitles = [
+    "React: De cero a experto",
+    "Universidad de Programación - Python, Java y JavaScript",
+    "Front-End Development Libraries",
   ];
+
+  const featuredCertifications = featuredCertificationTitles
+    .map((title, index) => {
+      const certificate = certificates.find((cert) => cert.title === title);
+
+      if (!certificate) return null;
+
+      return {
+        id: index + 1,
+        title: certificate.title,
+        institution: certificate.issuer,
+        year: certificate.date,
+        category: certificate.category,
+        status: certificate.status,
+        backgroundImage: certificate.backgroundImage,
+        credentialUrl: certificate.link,
+      };
+    })
+    .filter(Boolean);
 
   // Certificaciones simuladas para el efecto de desvanecimiento
   const loadingCertifications = [
@@ -91,75 +77,109 @@ const CertificationsShowcase = () => {
 
           {/* Certifications Grid - Principales */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {certifications.map((cert, index) => (
-              <div
-                key={cert.id}
-                className="group relative bg-black border border-white/15 rounded-xl overflow-hidden hover:border-white/36 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-[28rem]"
-                style={{ 
-                  animationDelay: `${index * 150}ms`,
-                  animation: 'fadeInUp 0.6s ease-out forwards'
-                }}
-              >
-                {/* Certificate Image with Background */}
-                <div 
-                  className="relative overflow-hidden h-48 border-b border-white/10 bg-black flex items-center justify-center"
-                >
-                  {/* Background gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/40 z-10" />
-                  
-                  {/* Logo/Icon Image */}
-                  <img 
-                    src={cert.backgroundImage} 
-                    alt={`${cert.institution} logo`}
-                    className="relative z-0 max-w-[60%] max-h-[60%] object-contain opacity-80"
-                  />
-                  
-                  {/* Status Badge */}
-                  <div className="absolute top-4 right-4 z-20">
-                    <span className="bg-white text-black px-3 py-1 rounded-full text-xs font-medium">
-                      {cert.status}
-                    </span>
-                  </div>
-                </div>
+            {featuredCertifications.map((cert, index) => {
+              // Extraer ID de credencial de la URL si es posible
+              const extractCredentialId = (url) => {
+                if (url.includes('certificate/UC-')) {
+                  const match = url.match(/UC-([a-f0-9-]+)/);
+                  return match ? match[1].substring(0, 8) + '...' : null;
+                }
+                if (url.includes('certification/')) {
+                  const parts = url.split('certification/');
+                  if (parts[1]) {
+                    const id = parts[1].split('/')[0];
+                    return id.substring(0, 12) + '...';
+                  }
+                }
+                if (url.includes('award/')) {
+                  const parts = url.split('award/');
+                  if (parts[1]) {
+                    return parts[1].substring(0, 12) + '...';
+                  }
+                }
+                return null;
+              };
 
-                {/* Content */}
-                <div className="p-6 flex flex-col h-[calc(28rem-12rem)]">
-                  <div className="flex-grow">
-                    <div className="mb-4">
-                      <span className="text-white text-sm font-medium tracking-wider uppercase">
-                        {cert.category}
+              const credentialId = extractCredentialId(cert.credentialUrl);
+
+              return (
+                <div
+                  key={cert.id}
+                  className="group relative bg-black border border-white/15 rounded-xl overflow-hidden hover:border-white/36 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-[32rem] flex flex-col"
+                  style={{ 
+                    animationDelay: `${index * 150}ms`,
+                    animation: 'fadeInUp 0.6s ease-out forwards'
+                  }}
+                >
+                  {/* Certificate Image with Background */}
+                  <div className="relative overflow-hidden h-56 border-b border-white/10 bg-gradient-to-br from-gray-900/50 to-black flex items-center justify-center">
+                    {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-5" style={{
+                      backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }} />
+                    
+                    {/* Logo/Icon Image */}
+                    <div className="relative z-10 p-8 flex items-center justify-center w-full h-full">
+                      <img 
+                        src={cert.backgroundImage} 
+                        alt={`${cert.institution} logo`}
+                        className="max-w-[70%] max-h-[70%] object-contain opacity-90 filter drop-shadow-lg"
+                      />
+                    </div>
+                    
+                    {/* Status Badge */}
+                    <div className="absolute top-4 right-4 z-20">
+                      <span className="bg-white text-black px-3 py-1.5 rounded-full text-xs font-medium shadow-lg">
+                        {cert.status}
                       </span>
                     </div>
-                    
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
-                      {cert.title}
-                    </h3>
-                    
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-gray-400">
-                        <Building className="w-4 h-4" />
-                        <span className="text-sm">{cert.institution}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-400">
-                        <Calendar className="w-4 h-4" />
-                        <span className="text-sm">{cert.year}</span>
-                      </div>
-                    </div>
                   </div>
 
-                  {/* Credential Info - Always at bottom */}
-                  <div className="space-y-2 mt-auto"> 
-                    <button 
-                      onClick={() => window.open(cert.credentialUrl, '_blank')}
-                      className="flex items-center gap-2 text-white hover:text-gray-300 text-sm font-medium transition-colors duration-200 cursor-pointer"
-                    >
-                      Validar credencial
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
+                  {/* Content */}
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="flex-grow">
+                      <div className="mb-5">
+                        <span className="text-white text-xs font-bold tracking-wider uppercase bg-white/10 px-3 py-1.5 rounded-md">
+                          {cert.category}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-lg font-bold text-white mb-4 group-hover:text-gray-300 transition-colors duration-300 line-clamp-3 leading-tight min-h-[4.5rem]">
+                        {cert.title}
+                      </h3>
+                      
+                      <div className="space-y-4 mb-5">
+                        <div className="flex items-center gap-3 text-gray-300">
+                          <Building className="w-4 h-4 text-white" />
+                          <span className="text-sm font-medium">{cert.institution}</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-gray-300">
+                          <Calendar className="w-4 h-4 text-white" />
+                          <span className="text-sm font-medium">{cert.year}</span>
+                        </div>
+                        {credentialId && (
+                          <div className="text-xs text-gray-400 font-mono bg-black/30 px-2 py-1 rounded border border-white/5">
+                            ID: {credentialId}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Credential Info - Always at bottom */}
+                    <div className="mt-auto border-t border-white/10 pt-5"> 
+                      <button 
+                        onClick={() => window.open(cert.credentialUrl, '_blank')}
+                        className="w-full flex items-center justify-center gap-2 text-white hover:text-gray-300 text-sm font-medium transition-all duration-200 cursor-pointer bg-white/5 hover:bg-white/10 px-4 py-3 rounded-lg border border-white/10 hover:border-white/30"
+                      >
+                        Validar credencial
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Fade Effect Container - Con gradiente personalizado - Solo en tablet y desktop */}

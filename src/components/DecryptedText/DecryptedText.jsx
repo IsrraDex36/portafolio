@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState, useCallback } from 'react';
 
-const lettersAndSymbols = 'abcdefghijkyz!@#$%^&*-_+=;:<>,';
+const lettersAndSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+';
 
 export function DecryptedText({ text }) {
   const [animatedText, setAnimatedText] = useState('');

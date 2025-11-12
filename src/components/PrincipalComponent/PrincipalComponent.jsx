@@ -54,7 +54,12 @@ const ProfileSection = () => {
           <section className="md:order-1 text-center md:text-left" aria-labelledby="profile-heading">
             <header>
               <h1 id="profile-heading" className="text-3xl md:text-5xl leading-tight mb-4 md:mb-5">
-                <RandomizedTextEffect text="Jonathan Israel Caballero Morales" />
+                <div className="block">
+                  <RandomizedTextEffect text="Jonathan Israel" />
+                </div>
+                <div className="block mt-1 md:mt-2">
+                  <RandomizedTextEffect text="Caballero Morales" />
+                </div>
               </h1>
             </header>
 
