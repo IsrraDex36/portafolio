@@ -34,7 +34,7 @@ export const projectItems = [
   {
     title: "MiInbox - Aplicación de Correo Electrónico",
     description:
-      "Aplicación de correo electrónico tipo Gmail con React 18, TypeScript y Zustand. Gestiona mensajes en hilos, composición, búsqueda y organización con interfaz Material-UI responsiva. Demuestra arquitectura moderna, estado global y testing automatizado.",
+      "Aplicación de correo electrónico tipo Gmail con React 18, TypeScript y Zustand. Gestiona mensajes en hilos, composición, búsqueda y organización con interfaz responsive. Demuestra arquitectura moderna, estado global y testing automatizado, con v0 y react.",
     media: { type: "img", src: MiInbox },
     technologies: ["React", "TypeScript", "V0", "Tailwind CSS", "ReactRouter"],
     githubUrl: "https://github.com/IsrraDex36/MiInboxAppPrueba",
