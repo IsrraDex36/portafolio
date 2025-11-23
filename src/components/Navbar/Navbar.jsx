@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { 
-  User, 
-  Zap, 
-  Briefcase, 
-  FolderOpen, 
-  BookOpen, 
+import {
+  User,
+  Zap,
+  Briefcase,
+  FolderOpen,
+  BookOpen,
   Award,
-  Moon, 
-  Sun 
+  Moon,
+  Sun
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLenisContext } from '@/context/LenisContext';
@@ -17,13 +17,13 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
-  
+
   // Obtener funciones de Lenis del contexto
   const { scrollTo } = useLenisContext();
 
   // Secciones para monitorear (en el orden correcto según la página)
   const sections = ['home', 'experience', 'projects', 'certifications', 'skills', 'education', 'about'];
-  
+
   // Detectar sección activa automáticamente
   const activeSection = useActiveSection(sections, {
     rootMargin: '-10% 0px -70% 0px',
@@ -41,12 +41,12 @@ const Navbar = () => {
   // Scroll-based navigation highlighting
   useEffect(() => {
     const sections = ['home', 'experience', 'projects', 'certifications', 'skills', 'education', 'about'];
-    
+
     // Responsive observer options based on screen size
     const getObserverOptions = () => {
       const isMobile = window.innerWidth < 768;
       const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-      
+
       if (isMobile) {
         // Mobile: Very sensitive detection
         return {
@@ -79,26 +79,26 @@ const Navbar = () => {
         const rect = entry.boundingClientRect;
         const viewportHeight = window.innerHeight;
         const sectionId = entry.target.id;
-        
+
         // Check if any part of the section is visible
         const isVisible = rect.top < viewportHeight && rect.bottom > 0;
-        
+
         if (isVisible) {
           // Calculate how much of the section is in viewport
           const visibleTop = Math.max(0, rect.top);
           const visibleBottom = Math.min(viewportHeight, rect.bottom);
           const visibleHeight = Math.max(0, visibleBottom - visibleTop);
           const visibilityRatio = visibleHeight / viewportHeight;
-          
+
           // Prioritize sections that are more centered in viewport
           const sectionCenter = rect.top + rect.height / 2;
           const viewportCenter = viewportHeight / 2;
           const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
           const centerScore = Math.max(0, 1 - distanceFromCenter / (viewportHeight / 2));
-          
+
           // Combined score with higher weight on visibility
           const score = visibilityRatio * 0.8 + centerScore * 0.2;
-          
+
           if (score > bestScore) {
             bestScore = score;
             bestSection = sectionId;
@@ -117,7 +117,7 @@ const Navbar = () => {
           'education': 'education',
           'about': 'profile'
         };
-        
+
         const navItemId = navItemMap[bestSection];
         if (navItemId && navItemId !== activeItem) {
           setActiveItem(navItemId);
@@ -143,10 +143,10 @@ const Navbar = () => {
     const handleResize = () => {
       // Disconnect current observer
       observer.disconnect();
-      
+
       // Create new observer with updated options
       observer = new IntersectionObserver(observerCallback, getObserverOptions());
-      
+
       // Re-observe all sections
       observeSections();
     };
@@ -226,7 +226,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav 
+    <nav
       className={`
         /* Desktop: Left sidebar */
         fixed left-5 top-1/2 -translate-y-1/2 z-[1000]
@@ -251,7 +251,7 @@ const Navbar = () => {
         {navItems.map((item, index) => {
           const IconComponent = item.icon;
           const isActive = activeSection === item.section;
-          
+
           return (
             <div
               key={item.id}
@@ -267,7 +267,7 @@ const Navbar = () => {
               onClick={() => handleItemClick(item.id, item.section)}
             >
               {/* Icon Container */}
-              <div 
+              <div
                 className={`
                   w-[35px] h-[35px] rounded-full flex justify-center items-center
                   bg-sky-100/10 transition-all duration-300 ease-in-out
@@ -291,9 +291,9 @@ const Navbar = () => {
                 `}
               >
                 {item.isProfile ? (
-                  <img 
-                    src="/jcm_logo.png" 
-                    alt="Perfil" 
+                  <img
+                    src="/jcm_logo.png"
+                    alt="Perfil"
                     className={`
                       w-[110%] h-[110%] object-cover rounded-full scale-110 max-md:w-[100%] max-md:h-[100%] max-md:scale-100
                       transition-all duration-300 ease-in-out
@@ -302,8 +302,8 @@ const Navbar = () => {
                     `}
                   />
                 ) : (
-                  <IconComponent 
-                    size={20} 
+                  <IconComponent
+                    size={20}
                     className={`
                       transition-all duration-300 ease-in-out
                       ${item.isThemeToggle && isDarkMode ? 'text-yellow-400' : 'text-white'}
@@ -318,7 +318,7 @@ const Navbar = () => {
 
 
               {/* Tooltip */}
-              <span 
+              <span
                 className="
                   /* Desktop: Right tooltip */
                   absolute left-[210%] top-1/2 -translate-y-1/2

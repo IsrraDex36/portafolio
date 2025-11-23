@@ -78,76 +78,86 @@ export default function AboutMe() {
           </div>
         </FadeContent>
 
-        {/* Terminal Card */}
+        {/* Terminal Card - MINIMALISTA */}
         <FadeContent duration={800} delay={400} threshold={0.2} className="flex justify-center md:justify-end">
           <div className="relative w-[320px] sm:w-[400px] md:w-[480px]">
-            <div className="rounded-2xl overflow-hidden backdrop-blur-xl bg-gray-900/80 border border-white/20 shadow-xl">
 
-              {/* Barra Terminal */}
-              <div className="flex items-center justify-between px-5 py-3 bg-black border border-white/20">
+            {/* Card principal - diseño limpio */}
+            <div className="rounded-2xl overflow-hidden bg-gray-950 border border-gray-800 shadow-xl hover:border-gray-700 transition-all duration-300">
+
+              {/* Barra Terminal - minimalista */}
+              <div className="flex items-center justify-between px-5 py-3.5 bg-black/50 border-b border-gray-800">
                 <div className="flex space-x-2">
-                  <span className="h-3 w-3 rounded-full bg-red-500" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                  <span className="h-3 w-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer" />
+                  <span className="h-3 w-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer" />
                 </div>
                 <span className="font-mono text-xs text-gray-400">isrra@portfolio — zsh</span>
                 <div className="w-6" />
               </div>
 
               {/* Contenido Terminal */}
-              <div className="p-6 bg-black to-gray-900/80">
-                {/* Header Terminal */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
+              <div className="p-6 sm:p-7 bg-black/30">
+
+                {/* Header con foto */}
+                <div className="flex flex-col sm:flex-row items-center gap-5 mb-7">
                   <img
                     src={profileImage}
                     alt="Foto de Jonathan Israel Caballero"
-                    className="h-24 w-24 sm:h-16 sm:w-16 rounded-xl object-cover shadow-lg"
+                    className="h-20 w-20 rounded-xl object-cover shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
                     loading="lazy"
                   />
-                  <div className="text-center sm:text-left min-w-0">
-                    <p className="font-mono text-[10px] sm:text-[11px] text-emerald-400 mb-1">
+
+                  <div className="text-center sm:text-left min-w-0 flex-1">
+                    <p className="font-mono text-xs text-emerald-400 mb-1.5">
                       ~/about
                     </p>
-                    <h3 className="text-white font-semibold text-base sm:text-lg leading-tight mb-1">
-                      <span className="block sm:inline truncate sm:truncate-none">
-                        Jonathan Israel Caballero Morales
-                      </span>
+                    <h3 className="text-white font-semibold text-lg sm:text-xl leading-tight mb-1.5">
+                      Jonathan Israel Caballero Morales
                     </h3>
-                    <p className="text-gray-300 text-xs sm:text-sm">
+                    <p className="text-gray-400 text-sm">
                       ING titulado en desarrollo de software
                     </p>
                   </div>
                 </div>
 
-                <div className="h-px bg-gray-700/50 mb-6" />
+                {/* Separador simple */}
+                <div className="h-px bg-gray-800 mb-6" />
 
                 {/* Terminal Interactive */}
-                <div className="space-y-4 font-mono text-sm text-gray-200">
-                  <div className="flex items-center">
-                    <span className="text-emerald-400 mr-2">$</span>
-                    <span>{typedText}</span>
+                <div className="space-y-4 font-mono text-sm">
+                  {/* Prompt line */}
+                  <div className="flex items-center gap-2">
+                    <span className="text-emerald-400">$</span>
+                    <span className="text-gray-300">{typedText}</span>
                     {showCursor && <span className="text-emerald-400 animate-pulse">|</span>}
                   </div>
 
-                  <div className="ml-4 space-y-3">
-                    <p className="text-gray-100">ING titulado en desarrollo de software</p>
+                  {/* Output */}
+                  <div className="ml-4 space-y-4">
+                    <p className="text-gray-200">
+                      ING titulado en desarrollo de software
+                    </p>
+
+                    {/* Tech Stack - simple y limpio */}
                     <div className="flex flex-wrap gap-2">
-                      {['JS','TS','Vue','React','Node'].map(t => (
-                        <span key={t} className="px-3 py-1 bg-emerald-500/20 rounded font-medium text-emerald-300 text-xs">
-                          {t}
+                      {['JS', 'TS', 'Vue', 'React', 'Node'].map(tech => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-md text-emerald-300 text-xs font-medium transition-colors duration-200 cursor-default"
+                        >
+                          {tech}
                         </span>
                       ))}
                     </div>
-                    <p className="italic text-gray-100">"ship rápido, UI limpia, foco en valor"</p>
+
+                    {/* Quote simple */}
+                    <p className="italic text-gray-300 border-l-2 border-gray-700 pl-4">
+                      "ship rápido, UI limpia, foco en valor"
+                    </p>
                   </div>
                 </div>
               </div>
-
-              {/* Textura */}
-              <div
-                className="pointer-events-none absolute inset-0 opacity-5 mix-blend-overlay"
-                style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '8px 8px' }}
-              />
 
             </div>
           </div>

@@ -15,8 +15,8 @@ export default function Proyectos() {
 
   return (
     <div>
-     <BentoCard />
-     {/* <BentoCertif /> */}
+      <BentoCard />
+      {/* <BentoCertif /> */}
     </div>
   )
 }

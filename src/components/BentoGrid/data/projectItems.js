@@ -5,6 +5,7 @@ import ClimaApi from '@assets/img/clima-api.png';
 import GeminiApi from '@assets/img/gemini-api.png';
 import TetrisJuego from '@assets/img/tetrisjicm.png';
 import GitQuick from '@assets/img/gitimat.png';
+import MiInbox from '@assets/img/inbox.jpeg';
 
 export const projectItems = [
   {
@@ -29,6 +30,16 @@ export const projectItems = [
     quoteContent: "El futuro pertenece a quienes creen en la belleza de sus sueños",
     quoteAuthor: "Eleanor Roosevelt",
     className: "",
+  },
+  {
+    title: "MiInbox - Aplicación de Correo Electrónico",
+    description:
+      "Aplicación de correo electrónico tipo Gmail con React 18, TypeScript y Zustand. Gestiona mensajes en hilos, composición, búsqueda y organización con interfaz Material-UI responsiva. Demuestra arquitectura moderna, estado global y testing automatizado.",
+    media: { type: "img", src: MiInbox },
+    technologies: ["React", "TypeScript", "V0", "Tailwind CSS", "ReactRouter"],
+    githubUrl: "https://github.com/IsrraDex36/MiInboxAppPrueba",
+    liveUrl: "https://miinboxapp.netlify.app/",
+    className: "md:col-span-2",
   },
   {
     title: "API Pokedex",
@@ -59,7 +70,7 @@ export const projectItems = [
         author: "Steve Jobs",
       },
       {
-        type: "gif", 
+        type: "gif",
         src: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YjIzZjM0aWdoempwb2N6enl5YzRiN2wwMXV2ZzJsYXoyZXI1eXl3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OumCa12QC9CIvBe2c1/giphy.gif",
       },
       {
@@ -127,7 +138,7 @@ export const projectItems = [
         author: "Proverbio",
       },
       {
-        type: "gif", 
+        type: "gif",
         src: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b3hzdDEzYWo4bHhvcDhmajNpNHhqb3liZW13YWxtMG5odmZ5bzFrayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JqmupuTVZYaQX5s094/giphy.gif",
       },
       {
