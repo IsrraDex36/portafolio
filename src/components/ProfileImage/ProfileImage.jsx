@@ -83,10 +83,10 @@ export default function AboutMe() {
           <div className="relative w-[320px] sm:w-[400px] md:w-[480px]">
 
             {/* Card principal - diseño limpio */}
-            <div className="rounded-2xl overflow-hidden bg-gray-950 border border-gray-800 shadow-xl hover:border-gray-700 transition-all duration-300">
+            <div className="rounded-2xl overflow-hidden bg-gray-950 border border-gray-800/50 shadow-xl hover:border-gray-700/70 transition-all duration-300">
 
               {/* Barra Terminal - minimalista */}
-              <div className="flex items-center justify-between px-5 py-3.5 bg-black/50 border-b border-gray-800">
+              <div className="flex items-center justify-between px-5 py-3.5 bg-black/50 border-b border-gray-800/50">
                 <div className="flex space-x-2">
                   <span className="h-3 w-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer" />
                   <span className="h-3 w-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer" />
@@ -104,7 +104,7 @@ export default function AboutMe() {
                   <img
                     src={profileImage}
                     alt="Foto de Jonathan Israel Caballero"
-                    className="h-20 w-20 rounded-xl object-cover shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
+                    className="h-20 w-20 rounded-xl object-cover shadow-lg ring-1 ring-gray-800 hover:ring-gray-700 transition-all duration-300"
                     loading="lazy"
                   />
 
@@ -122,7 +122,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Separador simple */}
-                <div className="h-px bg-gray-800 mb-6" />
+                <div className="h-px bg-gray-800/50 mb-6" />
 
                 {/* Terminal Interactive */}
                 <div className="space-y-4 font-mono text-sm">
@@ -144,7 +144,7 @@ export default function AboutMe() {
                       {['JS', 'TS', 'Vue', 'React', 'Node'].map(tech => (
                         <span
                           key={tech}
-                          className="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-md text-emerald-300 text-xs font-medium transition-colors duration-200 cursor-default"
+                          className="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-md text-emerald-300 text-xs font-medium transition-colors duration-200 cursor-default"
                         >
                           {tech}
                         </span>
@@ -152,7 +152,7 @@ export default function AboutMe() {
                     </div>
 
                     {/* Quote simple */}
-                    <p className="italic text-gray-300 border-l-2 border-gray-700 pl-4">
+                    <p className="italic text-gray-300 border-l-2 border-gray-800 pl-4">
                       "ship rápido, UI limpia, foco en valor"
                     </p>
                   </div>
