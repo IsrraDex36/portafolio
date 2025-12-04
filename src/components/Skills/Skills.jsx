@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import TerminalCard from './components/TerminalCard';
 import { skillsData } from './data/skillsData';
-import BlurText from '@components/BlurText/BlurText';
+import BlurText from '@/components/BlurText/BlurText';
 
 const Skills = () => {
     const [isVisible, setIsVisible] = useState(false);

@@ -1,26 +1,37 @@
 export const itemExperience = [ 
   {
     title: "Desarrollador Front-end",
+    company: "MAGG",
+    date: "Agosto 2025 - Actualidad",
+    description:
+      "Lidero el desarrollo front-end en la modernización completa del sitio corporativo, definiendo arquitectura, estándares y mejores prácticas. Implemento la nueva plataforma con React + TypeScript, Zustand, React Router y Tailwind, asegurando componentes escalables y alto rendimiento. Bajo metodología Scrum, coordino tareas del equipo y utilizo v0 para acelerar prototipado y diseño. El proyecto ha permitido mejorar la experiencia del usuario y sentar bases para futuras integraciones.",
+  },
+
+  {
+    title: "Desarrollador Front-end",
     company: "WebDecero",
     date: "Junio 2025 - Agosto 2025",
     description: 
-      "Colaboré en el desarrollo de interfaces web con React, creando componentes reutilizables, implementando formularios dinámicos con React Hook Form y consumiendo APIs REST (Axios/Fetch). Refactoricé código legado aplicando patrones como MVC y modernizando el stack con JavaScript (ES6+), HTML5 y CSS3. Trabajé con GitHub Desktop para control de versiones, coordinándome mediante Microsoft Teams y utilizando Postman para pruebas de endpoints durante el desarrollo.",
+      "Desarrollé interfaces modernas con React, implementando componentes reutilizables, formularios dinámicos y consumo de APIs REST. Modernicé código legado aplicando patrones y mejores prácticas con ES6+, HTML5 y CSS3. Utilicé GitHub, Postman y Teams para un flujo de trabajo ágil y organizado que permitió incrementar la calidad del producto entregado.",
   },
+
   {
     title: "Desarrollador Full Stack",
     company: "Clever Cloud",
     date: "Septiembre 2024 - Junio 2025",
     description: 
-      "Formé parte del desarrollo de un ERP corporativo, creando nuevas funcionalidades con Vue.js en el frontend y JavaScript/PHP en el backend, junto con MySQL para la persistencia de datos. Optimizé procesos, resolví incidencias técnicas y brindé soporte continuo a las historias de usuario durante cada sprint, aplicando metodologías ágiles (Scrum con Jira) y gestionando versiones con Git. Contribuí tanto a la evolución de módulos existentes como a la creación de nuevos, reforzando mis habilidades de trabajo en equipo y mejora continua.",
+      "Contribuí al desarrollo de un ERP empresarial trabajando en frontend (Vue.js) y backend (JavaScript/PHP) con MySQL. Implementé nuevas funcionalidades, resolví incidencias críticas y optimicé módulos existentes. Apliqué Scrum con Jira y Git, logrando una mejora continua del sistema y fortaleciendo mi capacidad para trabajar en entornos complejos.",
   },
+
   {
     title: "Desarrollador .NET",
     company: "Industrias Maquinsa S.A de C.V.",
     date: "Mayo 2023 - Agosto 2024",
     description: 
-      "Lideré el desarrollo de un sistema de gestión de personal para Maquinsa y Grupo Alquimara, construido con ASP.NET y C#, logrando mejorar en un 30% la eficiencia administrativa. Diseñé interfaces web modernas con HTML, CSS y JavaScript, e integré MySQL sobre un servidor Linux para garantizar la seguridad y disponibilidad de los datos. Esta experiencia me permitió fortalecer mis capacidades técnicas y de liderazgo en entornos reales.",
+      "Dirigí el desarrollo de un sistema de gestión de personal con ASP.NET y C#, utilizado por Maquinsa y Grupo Alquimara. La plataforma mejoró en un 30% la eficiencia administrativa. Diseñé interfaces limpias con HTML, CSS y JavaScript, e integré MySQL en servidor Linux, asegurando estabilidad y disponibilidad. Esta experiencia consolidó mis habilidades técnicas y de liderazgo.",
   },
 ];
+
 
 export const formacion = [
   {

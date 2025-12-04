@@ -1,5 +1,5 @@
 // Componentes principales
-import PrincipalComponent from '@components/PrincipalComponent/PrincipalComponent';
+import PrincipalComponent from '@/components/PrincipalComponent/PrincipalComponent';
 import Skills from '@/components/Skills/Skills';
 import Proyects from '@/components/Proyects/Proyects';
 import ExperienceTimeline from '@/components/TimeLine/TimeLine';
@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import CertificationsShowcase from '@/components/Certifications/Certifications';
 
 // Componentes de animación y efectos
-import BlurText from '@components/BlurText/BlurText';
+import BlurText from '@/components/BlurText/BlurText';
 import CountUp from '@/components/CountUp/CountUp';
 import '../estilos/PrincipalStyles.css'
 

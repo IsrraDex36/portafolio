@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ExternalLink, Github, ArrowLeft } from 'lucide-react';
 import { memo, useCallback } from 'react';
-import BlurText from '@components/BlurText/BlurText';
-import FadeContent from '@components/FadeContent/FadeContent';
-import Squares from '@components/Squares/Squares';
-import { techIcons } from '@components/Proyects/data/techIcons';
+import BlurText from '@/components/BlurText/BlurText';
+import FadeContent from '@/components/FadeContent/FadeContent';
+import Squares from '@/components/Squares/Squares';
+import { techIcons } from '@/components/Proyects/data/techIcons';
 import { projectItems } from './data/projectItems';
 import { backgroundConfig } from './data/backgroundConfig';
 

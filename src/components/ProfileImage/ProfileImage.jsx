@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import profileImage from "@assets/img/me.png";
-import BlurText from "@components/BlurText/BlurText";
-import FadeContent from "@components/FadeContent/FadeContent";
+import profileImage from "@/assets/img/me.png";
+import BlurText from "@/components/BlurText/BlurText";
+import FadeContent from "@/components/FadeContent/FadeContent";
 
 export default function AboutMe() {
   const [currentCommand, setCurrentCommand] = useState(0);

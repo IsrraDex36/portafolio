@@ -1,11 +1,11 @@
 // Importaciones de imágenes
-import MovieXD from '@assets/img/peliculasxd.png';
-import PokedexApi from '@assets/img/pokedexapi.png';
-import ClimaApi from '@assets/img/clima-api.png';
-import GeminiApi from '@assets/img/gemini-api.png';
-import TetrisJuego from '@assets/img/tetrisjicm.png';
-import GitQuick from '@assets/img/gitimat.png';
-import MiInbox from '@assets/img/inbox.jpeg';
+import MovieXD from '@/assets/img/peliculasxd.png';
+import PokedexApi from '@/assets/img/pokedexapi.png';
+import ClimaApi from '@/assets/img/clima-api.png';
+import GeminiApi from '@/assets/img/gemini-api.png';
+import TetrisJuego from '@/assets/img/tetrisjicm.png';
+import GitQuick from '@/assets/img/gitimat.png';
+import MiInbox from '@/assets/img/inbox.jpeg';
 
 export const projectItems = [
   {

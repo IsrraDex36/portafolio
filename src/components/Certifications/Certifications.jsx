@@ -60,14 +60,14 @@ const CertificationsShowcase = () => {
             <div className="flex justify-center mb-4">
               <BlurText 
                 text="Certificaciones"
-                className="text-5xl md:text-6xl font-light text-white tracking-tight justify-center"
+                className="text-5xl md:text-6xl font-bold text-white tracking-tight justify-center"
                 delay={100}
                 animateBy="words"
               />
             </div>
             <div className="flex justify-center">
               <BlurText 
-                text="Compromiso continuo con la excelencia técnica y el aprendizaje especializado"
+                text="Formación continua y especialización técnica en desarrollo moderno"
                 className="text-xl text-gray-400 max-w-2xl leading-relaxed text-center justify-center"
                 delay={150}
                 animateBy="words"
@@ -265,12 +265,12 @@ const CertificationsShowcase = () => {
             </button>
             
             <p className="text-gray-500 text-xs mt-3">
-              Explora mi formación completa y especialización técnica
+              Explora mi recorrido de formación y certificaciones
             </p>
           </div>
 
           {/* Stats Section - Integrado */}
-          <div className="mt-8 bg-black border border-white/20 rounded-2xl p-6">
+          <div className="mt-8 bg-black p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-white mb-2">

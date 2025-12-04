@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import BlurText from '@components/BlurText/BlurText';
+import BlurText from '@/components/BlurText/BlurText';
 import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projectsData';
 import { ArrowRight } from "lucide-react"
