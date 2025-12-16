@@ -1,6 +1,6 @@
-import CasiSat from '@assets/img/casisatv2.png'
-import Fortisiip from '@assets/img/proyect2.png'
-import Clever from '@assets/img/clever.png'
+import CasiSat from '@/assets/img/casisatv2.png'
+import Fortisiip from '@/assets/img/proyect2.png'
+import Clever from '@/assets/img/clever.png'
 
 export const projects = [
   {

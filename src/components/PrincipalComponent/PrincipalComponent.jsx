@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
-import profileImage from "@assets/img/me.png";
-import RandomizedTextEffect from "@components/DecryptedText/DecryptedText";
-import DownloadDialog from "@components/DownloadDialog/DownloadDialog";
-import FloatingIcons from "@components/FloatingIcons/FloatingIcons";
+import profileImage from "@/assets/img/me.png";
+import RandomizedTextEffect from "@/components/DecryptedText/DecryptedText";
+import DownloadDialog from "@/components/DownloadDialog/DownloadDialog";
+import FloatingIcons from "@/components/FloatingIcons/FloatingIcons";
 import { Mail, LinkedinIcon, GithubIcon, FileText } from "lucide-react";
 
 // Clases reutilizables para botones

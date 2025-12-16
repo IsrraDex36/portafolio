@@ -23,11 +23,11 @@ export default function Timeline({ items = [] }) {
 
             {/* Tarjeta (diseño fijo) */}
             <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-xl shadow-black/20 ring-1 ring-white/10">
-                <div className="grid gap-4 p-4 sm:p-5 md:p-6 md:grid-cols-[minmax(200px,260px)_1fr]">
+              <div className="rounded-2xl backdrop-blur-md shadow-xl shadow-black/20 ring-1 ring-white/10">
+                <div className="grid gap-4 p-4 md:p-6 md:grid-cols-[minmax(200px,260px)_1fr]">
                   {/* Columna izquierda */}
                   <div className="space-y-2 min-w-0">
-                    <h4 className="text-[16px] sm:text-[17px] font-semibold text-yellow-200 break-words">
+                    <h4 className="text-[16px] font-semibold text-yellow-200 break-words">
                       {item.title}
                     </h4>
 
